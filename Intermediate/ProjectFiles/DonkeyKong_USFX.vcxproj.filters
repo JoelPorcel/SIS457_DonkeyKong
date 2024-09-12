@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_USFX.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{BF89FB58-6D72-4B42-ACA8-97CF8452E25C}</UniqueIdentifier>
+      <UniqueIdentifier>{00A748D9-B098-480E-A821-692FB462497A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_USFX.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\DonkeyKong_USFXEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{0AD48D75-A98E-4F5B-B66B-6162D4EFF1A8}</UniqueIdentifier>
+      <UniqueIdentifier>{4768E9A8-FC7B-4E24-95F1-FC9CBD6F62CE}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_USFX">
-      <UniqueIdentifier>{5267D5F1-EBEE-46EA-9FAA-C428FAA4E1E8}</UniqueIdentifier>
+      <UniqueIdentifier>{4D3C68ED-A549-498F-93F2-EBA1F77D483A}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_USFX\Barril.cpp">
       <Filter>Source\DonkeyKong_USFX</Filter>
@@ -87,6 +89,12 @@
       <Filter>Source\DonkeyKong_USFX</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_USFX\PlataformaSuvible.h">
+      <Filter>Source\DonkeyKong_USFX</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_USFX\Proyectil.cpp">
+      <Filter>Source\DonkeyKong_USFX</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_USFX\Proyectil.h">
       <Filter>Source\DonkeyKong_USFX</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_USFX\Puertas.cpp">

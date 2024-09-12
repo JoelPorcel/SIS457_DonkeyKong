@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define DONKEYKONG_USFX_Puertas_generated_h
 
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_SPARSE_DATA
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_RPC_WRAPPERS
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_INCLASS_NO_PURE_DECLS \
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_SPARSE_DATA
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_RPC_WRAPPERS
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPuertas(); \
 	friend struct Z_Construct_UClass_APuertas_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(APuertas)
 
 
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_INCLASS \
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_INCLASS \
 private: \
 	static void StaticRegisterNativesAPuertas(); \
 	friend struct Z_Construct_UClass_APuertas_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(APuertas)
 
 
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_STANDARD_CONSTRUCTORS \
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APuertas(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APuertas) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_ENHANCED_CONSTRUCTORS \
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APuertas(APuertas&&); \
@@ -58,28 +58,31 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APuertas)
 
 
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_PRIVATE_PROPERTY_OFFSET
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_9_PROLOG
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_GENERATED_BODY_LEGACY \
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__ProjectileClass() { return STRUCT_OFFSET(APuertas, ProjectileClass); }
+
+
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_10_PROLOG
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_PRIVATE_PROPERTY_OFFSET \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_SPARSE_DATA \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_RPC_WRAPPERS \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_INCLASS \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_STANDARD_CONSTRUCTORS \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_PRIVATE_PROPERTY_OFFSET \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_SPARSE_DATA \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_RPC_WRAPPERS \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_INCLASS \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_GENERATED_BODY \
+#define joelP_Source_DonkeyKong_USFX_Puertas_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_PRIVATE_PROPERTY_OFFSET \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_SPARSE_DATA \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_INCLASS_NO_PURE_DECLS \
-	DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h_12_ENHANCED_CONSTRUCTORS \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_PRIVATE_PROPERTY_OFFSET \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_SPARSE_DATA \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_INCLASS_NO_PURE_DECLS \
+	joelP_Source_DonkeyKong_USFX_Puertas_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -87,7 +90,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> DONKEYKONG_USFX_API UClass* StaticClass<class APuertas>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID DonkeyKong_USFX_Source_DonkeyKong_USFX_Puertas_h
+#define CURRENT_FILE_ID joelP_Source_DonkeyKong_USFX_Puertas_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -5,6 +5,7 @@
 #include "PlataformaMovible.h"
 #include "PlataformaSuvible.h"
 #include "Barril.h"
+#include "Puertas.h"
 #include "BarrilSaltador.h"
 #include "DonkeyKong_USFXCharacter.h"
 #include "UObject/ConstructorHelpers.h"
@@ -29,35 +30,36 @@ void ADonkeyKong_USFXGameMode::BeginPlay()
 	signo = 1.0f;
 	tiempo = 0.0f;
 	constant_z = 8.3f;
+	puertas = Posicion;
 	for (int i = 0; i < 6; i++) {
 		//plataformas
 		ID = Plataformas.Num();
 		desicion = FMath::RandRange(1, 2);
 		componentes = FMath::RandRange(3, 13);
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("desicion: %d"), desicion));
-		for (int y = componentes; y >= 1; y--) {
+		for (int t = componentes; t >= 1; t--) {
 			ID = Plataformas.Num();
 			movimiento = FMath::RandRange(3, 5);
 			if (desicion == 1 && y !=1) {
-				if (y == movimiento || y+1 == movimiento || y == movimiento+1) {
+				if (t == movimiento || t+1 == movimiento || t == movimiento+1) {
 					Posicion += FVector(0.0f, -290.f * signo, constant_z);
 					Plataformas.Add(ID,GetWorld()->SpawnActor<APlataformaSuvible>(APlataformaSuvible::StaticClass(), Posicion, Rotacion));
-				}else if(y != movimiento){
+				}else if(t != movimiento){
 					Posicion += FVector(0.0f, -290.f * signo, constant_z);
 					Plataformas.Add(ID,GetWorld()->SpawnActor<APlataforma>(APlataforma::StaticClass(), Posicion, Rotacion));
 				}
 			}
 			else {
-				if (y == movimiento) {
+				if (t == movimiento) {
 					Posicion += FVector(0.0f, -290.f * signo, constant_z - constant_z);
 					Plataformas.Add(ID,GetWorld()->SpawnActor<APlataformaSuvible>(APlataformaSuvible::StaticClass(), Posicion, FRotator::ZeroRotator));
 				}
-				else if(y != movimiento){
+				else if(t != movimiento){
 					Posicion += FVector(0.0f, -290.f * signo, constant_z - constant_z);
 					Plataformas.Add(ID,GetWorld()->SpawnActor<APlataforma>(APlataforma::StaticClass(), Posicion, FRotator::ZeroRotator));
 				}
+				puertasb = Posicion;
 			}
-
 		}
 		if (i == random) {
 			Aparicion = Posicion;
@@ -74,7 +76,13 @@ void ADonkeyKong_USFXGameMode::BeginPlay()
 		Rotacion.Roll *= -1;
 	}
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Cantidad del contenedor: %d"), Plataformas.Num()));
-
+	enemigosa = FMath::RandRange(3, 5);
+	Pu = puertas;
+	for (int p = enemigosa; p > 0; p--) {
+		Pu.Z = FMath::RandRange(puertasb.Z, puertas.Z);
+		Pu.Y = FMath::RandRange(puertasb.Y, puertas.Y);
+		Enemigos.Add(GetWorld()->SpawnActor<APuertas>(APuertas::StaticClass(), Pu, FRotator::ZeroRotator));
+	}
 }
 
 void ADonkeyKong_USFXGameMode::Tick(float DeltaTime)

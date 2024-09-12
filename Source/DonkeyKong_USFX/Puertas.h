@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Proyectil.h"
 #include "Puertas.generated.h"
 
 UCLASS()
@@ -19,9 +20,15 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Spawning")
+	TSubclassOf<AProyectil> ProjectileClass;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* puerta;
+
+	void SpawnEsfera();
+	float intervalo;
 };

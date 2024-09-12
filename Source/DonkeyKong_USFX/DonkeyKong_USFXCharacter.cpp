@@ -6,6 +6,9 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Proyectil.h"
+#include "Engine/World.h"
+#include "UObject/ConstructorHelpers.h"
 
 ADonkeyKong_USFXCharacter::ADonkeyKong_USFXCharacter()
 {
@@ -22,9 +25,9 @@ ADonkeyKong_USFXCharacter::ADonkeyKong_USFXCharacter()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Rotation of the character should not affect rotation of boom
 	CameraBoom->bDoCollisionTest = false;
-	CameraBoom->TargetArmLength = 3500.f;
-	CameraBoom->SocketOffset = FVector(0.f,0.f,1000.f);
-	CameraBoom->SetRelativeRotation(FRotator(0.f,180.f,0.f));
+	CameraBoom->TargetArmLength = 1500.f;
+	CameraBoom->SocketOffset = FVector(0.f, 0.f, 600.f);
+	CameraBoom->SetRelativeRotation(FRotator(0.f, 180.f, 0.f));
 
 	// Create a camera and attach to boom
 	SideViewCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("SideViewCamera"));
@@ -46,9 +49,6 @@ ADonkeyKong_USFXCharacter::ADonkeyKong_USFXCharacter()
 	leftmax = 1700.0f;
 	rightmin = -1300.0f;
 	rightmax = -1700.0f;
-
-	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
-	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
 
 void ADonkeyKong_USFXCharacter::Tick(float DeltaTime)
@@ -56,9 +56,6 @@ void ADonkeyKong_USFXCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	salto();
 }
-
-//////////////////////////////////////////////////////////////////////////
-// Input
 
 void ADonkeyKong_USFXCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
@@ -69,6 +66,7 @@ void ADonkeyKong_USFXCharacter::SetupPlayerInputComponent(class UInputComponent*
 
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &ADonkeyKong_USFXCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &ADonkeyKong_USFXCharacter::TouchStopped);
+	PlayerInputComponent->BindAction("SpawnEsfera", IE_Pressed, this, &ADonkeyKong_USFXCharacter::SpawnEsfera);
 }
 
 void ADonkeyKong_USFXCharacter::salto()
@@ -83,7 +81,7 @@ void ADonkeyKong_USFXCharacter::salto()
 void ADonkeyKong_USFXCharacter::MoveRight(float Value)
 {
 	// add movement in that direction
-	AddMovementInput(FVector(0.f,-1.f,0.f), Value);
+	AddMovementInput(FVector(0.f, -1.f, 0.f), Value);
 }
 
 void ADonkeyKong_USFXCharacter::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
@@ -97,3 +95,36 @@ void ADonkeyKong_USFXCharacter::TouchStopped(const ETouchIndex::Type FingerIndex
 	StopJumping();
 }
 
+void ADonkeyKong_USFXCharacter::SpawnEsfera()
+{
+	ProjectileClass = AProyectil::StaticClass();
+	if (ProjectileClass)
+	{
+		// Obtener la ubicaci?n y rotaci?n del jugador
+		FVector SpawnLocation = GetActorLocation() + GetActorForwardVector() * 100; // Ajustar la distancia de spawn
+		FRotator SpawnRotation = GetActorRotation();
+
+		// Par?metros de spawn
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this;
+		SpawnParams.Instigator = GetInstigator();
+		// Spawnear el proyectil
+		FVector ForwardDirection = GetActorForwardVector();
+		if (ForwardDirection.Y >= 0.99) {
+			//SpawnLocation.Y += 200.0f;
+			AProyectil* SpawnedProjectile1 = GetWorld()->SpawnActor<AProyectil>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
+			SpawnedProjectile1->Initialize(ForwardDirection);
+			//SpawnLocation.Y -= 100.0f;
+			//AProyectil* SpawnedProjectile2 = GetWorld()->SpawnActor<AProyectil>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
+			//SpawnedProjectile2->Initialize(ForwardDirection);
+		}
+		else if (ForwardDirection.Y <= -0.99) {
+			//pawnLocation.Y -= 200.0f;
+			AProyectil* SpawnedProjectile2 = GetWorld()->SpawnActor<AProyectil>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
+			SpawnedProjectile2->Initialize(ForwardDirection);
+			//SpawnLocation.Y += 100.0f;
+			//AProyectil* SpawnedProjectile2 = GetWorld()->SpawnActor<AProyectil>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
+			//SpawnedProjectile2->Initialize(ForwardDirection);
+		}
+	}
+}

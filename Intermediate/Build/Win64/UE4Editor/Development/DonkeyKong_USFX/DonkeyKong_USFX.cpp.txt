@@ -1,2 +1,2 @@
-C:\Users\fredd\OneDrive\Documentos\Unreal Projects\DonkeyKong_USFX\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_USFX\Definitions.DonkeyKong_USFX.h
-C:\Users\fredd\OneDrive\Documentos\Unreal Projects\DonkeyKong_USFX\Source\DonkeyKong_USFX\DonkeyKong_USFX.h
+C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_USFX\Definitions.DonkeyKong_USFX.h
+C:\Users\fredd\OneDrive\Documentos\joelP\Source\DonkeyKong_USFX\DonkeyKong_USFX.h

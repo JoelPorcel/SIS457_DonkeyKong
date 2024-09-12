@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Proyectil.h"
 #include "DonkeyKong_USFXCharacter.generated.h"
 
 UCLASS(config=Game)
@@ -35,6 +36,10 @@ class ADonkeyKong_USFXCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere)
 	FVector posicionActual;
 
+	//objeto proyectil
+	UPROPERTY(EditDefaultsOnly, Category = "Spawning")
+	TSubclassOf<AProyectil> ProjectileClass;
+
 protected:
 
 	/** Called for side to side input */
@@ -52,6 +57,7 @@ protected:
 	void salto();
 	// End of APawn interface
 
+
 public:
 	ADonkeyKong_USFXCharacter();
 
@@ -61,4 +67,6 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 
 	virtual void Tick(float DeltaTime) override;
+
+	void SpawnEsfera();
 };

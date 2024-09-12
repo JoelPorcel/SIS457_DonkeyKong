@@ -22,6 +22,7 @@ public:
 	TMap<int, AActor*> Plataformas;
 	TArray<AActor*> Barriles;
 	TArray<AActor*> Parkour;
+	TArray<AActor*> Enemigos;
 	FVector Posicion;
 	FRotator Rotacion;
 	FVector Spawn;
@@ -35,6 +36,15 @@ public:
 	int movimiento;
 	int ID;
 	AActor* destruir = nullptr;
+
+	//enemigos
+	FVector puertas;
+	FVector puertasb;
+	FVector Pu;
+	int enemigosa;
+	float z;
+	float y;
+
 };
 
 
