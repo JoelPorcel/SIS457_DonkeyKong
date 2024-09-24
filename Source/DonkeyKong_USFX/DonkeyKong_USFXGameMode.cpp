@@ -49,13 +49,13 @@ void ADonkeyKong_USFXGameMode::BeginPlay()
 	signo = 1.0f;
 	tiempo = 0.0f;
 	constant_z = 8.3f;
-	for (int i = 0; i < 7; i++) {
+	for (int i = 0; i < 5; i++) {
 		//plataformas
 		desicion = FMath::RandRange(1, 2);
 		componentes = FMath::RandRange(3, 13);
 		for (int t = 10; t >= 1; t--) {
 			movimiento = FMath::RandRange(2, 4);
-			if (desicion == 1 && t != 1 && i !=6) {
+			if (desicion == 1 && t != 1 && i !=4) {
 				if (t == movimiento) {
 					Posicion += FVector(0.0f, -290.f * signo, constant_z);
 					Plataformas.Add(GetWorld()->SpawnActor<APlataformaMovible>(APlataformaMovible::StaticClass(), Posicion, Rotacion));
@@ -102,7 +102,7 @@ void ADonkeyKong_USFXGameMode::BeginPlay()
 	//for (int e=0; e < enemigosCant; e++) {
 	//	GenerarEnemigos();
 	//}
-		enemigoAleatorio = Plataformas[34]->GetActorLocation();
+		enemigoAleatorio = Plataformas[24]->GetActorLocation();
 		enemigoAleatorio.Z += 70.f;
 		Enemigos.Add(GetWorld()->SpawnActor<AMono>(AMono::StaticClass(), enemigoAleatorio, FRotator::ZeroRotator));
 }
