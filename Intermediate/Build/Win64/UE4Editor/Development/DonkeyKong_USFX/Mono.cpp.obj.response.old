@@ -262,8 +262,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
+/FI"C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\DonkeyKong_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\DonkeyKong_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\DonkeyKong_USFXEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 "C:\Users\fredd\OneDrive\Documentos\joelP\Source\DonkeyKong_USFX\Mono.cpp"
-/FI"C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_USFX\Definitions.h"
+/FI"C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_USFX\Definitions.DonkeyKong_USFX.h"
 /Fo"C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_USFX\Mono.cpp.obj"
 /TP
 /GR-
