@@ -76,22 +76,6 @@ void ADonkeyKong_USFXGameMode::BeginPlay()
 					Plataformas.Add(GetWorld()->SpawnActor<APlataforma>(APlataforma::StaticClass(), Posicion, FRotator::ZeroRotator));
 				}
 			}
-			//if (aux != verificar) {
-			//	destruir = Plataformas[aux -1];
-			//	destruir->Destroy();
-			//	Plataformas.RemoveAt(aux -1);
-			//	if (signo == 1 && aux % 10 != 0  && aux % 9 != 0) {
-			//		destruir = Plataformas[aux + 2];
-			//		destruir->Destroy();
-			//		Plataformas.RemoveAt(aux + 2);
-			//	}
-			//	else if (signo == -1 && aux % 10 != 0 && aux % 9 != 0) {
-			//		destruir = Plataformas[aux - 2];
-			//		destruir->Destroy();
-			//		Plataformas.RemoveAt(aux - 2);
-			//	}
-			//	verificar = aux;
-			//}
 		}
 		signo *= -1.0f;
 		Posicion += FVector(0.0f, -275 * signo, 400.f);
