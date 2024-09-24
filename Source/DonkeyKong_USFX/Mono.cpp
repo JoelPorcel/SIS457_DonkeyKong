@@ -60,13 +60,13 @@ void AMono::SpawnProyectil()
 				break;
 			}
 		}
-		disparos = FMath::RandRange(1, 2);
-		if(disparos==1){
+		direccion = FMath::RandRange(1, 2);
+		if(direccion==1){
 			FVector ForwardDirection = FVector(0.0f, disparos, 0.0f);
 			AProyectil* SpawnedProjectile1 = GetWorld()->SpawnActor<AProyectil>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
 			SpawnedProjectile1->Initialize(ForwardDirection);
 		}
-		else if (disparos == 2) {
+		else if (direccion == 2) {
 			FVector ForwardDirection = FVector(0.0f, 0.0f, disparos);
 			AProyectil* SpawnedProjectile1 = GetWorld()->SpawnActor<AProyectil>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
 			SpawnedProjectile1->Initialize(ForwardDirection);

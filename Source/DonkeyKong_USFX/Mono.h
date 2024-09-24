@@ -33,5 +33,6 @@ public:
 
 	void SpawnProyectil();
 	float intervalo;
-	int disparos;	
+	int disparos;
+	int direccion;
 };
