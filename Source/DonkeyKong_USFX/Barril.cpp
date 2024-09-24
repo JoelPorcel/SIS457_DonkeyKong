@@ -56,27 +56,27 @@ void ABarril::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	//eje = GetActorLocation();
-	//eje.X = 1280.0f;
-	//inicial += DeltaTime;
-	//if (eje.Z <= 910) incremento = 0.4;
-	//if (inicial < 3.9 + incremento) {
-	//	eje.Y -= 10.4f;
-	//	BarrilMesh->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
-	//	SetActorLocation(eje);
-	//}
+	eje = GetActorLocation();
+	eje.X = 1280.0f;
+	inicial += DeltaTime;
+	if (eje.Z <= 910) incremento = 0.4;
+	if (inicial < 3.9 + incremento) {
+		eje.Y -= 10.4f;
+		BarrilMesh->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
+		SetActorLocation(eje);
+	}
 
-	//if (inicial < 10) {
-	//	eje.Y += 3.9f;
-	//	BarrilMesh->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
-	//	SetActorLocation(eje);     excepcion aqui
+	if (inicial < 10) {
+		eje.Y += 3.9f;
+		BarrilMesh->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
+		SetActorLocation(eje);     //excepcion aqui
 
-	//}
-	//if (inicial >= 10) {
-	//	inicial = 0;
-	//}
-	//BarrilMesh->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
-	//SetActorLocation(eje);
+	}
+	if (inicial >= 10) {
+		inicial = 0;
+	}
+	BarrilMesh->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
+	SetActorLocation(eje);
 
 
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Cantidad del contenedor: %f"), inicial));

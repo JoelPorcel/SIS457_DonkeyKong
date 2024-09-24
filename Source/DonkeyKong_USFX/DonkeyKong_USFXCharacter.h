@@ -42,6 +42,7 @@ class ADonkeyKong_USFXCharacter : public ACharacter
 
 protected:
 
+	virtual void BeginPlay();
 	/** Called for side to side input */
 	void MoveRight(float Val);
 
@@ -69,4 +70,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	void SpawnEsfera();
+
+	FVector Posicion;
 };

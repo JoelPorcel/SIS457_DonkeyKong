@@ -68,7 +68,9 @@ void ABarrilSaltador::Tick(float DeltaTime)
 		BarrilMovement->Velocity = FVector(velocidadActual.X, 115.0f, 115.0f);
 	}
 	ubicacionActual.X = 1280.0f;
-	BarrilMesh->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
+	if (BarrilMesh) {
+		BarrilMesh->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f));
+	}
 }
 
 void ABarrilSaltador::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)

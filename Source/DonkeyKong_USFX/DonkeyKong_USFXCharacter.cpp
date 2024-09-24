@@ -25,8 +25,8 @@ ADonkeyKong_USFXCharacter::ADonkeyKong_USFXCharacter()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Rotation of the character should not affect rotation of boom
 	CameraBoom->bDoCollisionTest = false;
-	CameraBoom->TargetArmLength = 1500.f;
-	CameraBoom->SocketOffset = FVector(0.f, 0.f, 600.f);
+	CameraBoom->TargetArmLength = 2500.f;
+	CameraBoom->SocketOffset = FVector(0.f, 0.f, 1000.f);
 	CameraBoom->SetRelativeRotation(FRotator(0.f, 180.f, 0.f));
 
 	// Create a camera and attach to boom
@@ -76,6 +76,14 @@ void ADonkeyKong_USFXCharacter::salto()
 		GetCharacterMovement()->JumpZVelocity = 1300.f;
 	}
 	else GetCharacterMovement()->JumpZVelocity = 1300.f;
+}
+
+void ADonkeyKong_USFXCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	Posicion = GetActorLocation();
+	Posicion += FVector(0.0f, 0.f, 3100.0f);
+	SetActorLocation(Posicion);
 }
 
 void ADonkeyKong_USFXCharacter::MoveRight(float Value)

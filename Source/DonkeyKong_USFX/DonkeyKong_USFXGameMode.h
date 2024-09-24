@@ -13,13 +13,14 @@ class ADonkeyKong_USFXGameMode : public AGameModeBase
 
 public:
 	ADonkeyKong_USFXGameMode();
+
 protected:
 	virtual void BeginPlay() override;
 
 public:
 	virtual void Tick(float DeltaTime) override;
-	
-	TMap<int, AActor*> Plataformas;
+
+	TArray<AActor*> Plataformas;
 	TArray<AActor*> Barriles;
 	TArray<AActor*> Parkour;
 	TArray<AActor*> Enemigos;
@@ -38,13 +39,32 @@ public:
 	AActor* destruir = nullptr;
 
 	//enemigos
-	FVector puertas;
-	FVector puertasb;
-	FVector Pu;
-	int enemigosa;
+	FVector enemigoAleatorio;
+	int enemigosCant;
 	float z;
 	float y;
+	int control;
+	/*void GenerarEnemigos();*/
 
+protected:
+	TArray<TSubclassOf<class AMuro>> Paredes;
+
+	float Timer;
+
+	void GenerarParedesAleatorias();
+
+	int32 IndiceAleatorio;
+
+	TSubclassOf<class AMuro> ParedesAleatorias;
+	FVector UbicacionAleatoria;
+	int PlataformaAleatoria;
+	int CantidadMuros;
+
+	//parcial
+	int aux;
+	int verificar;
+	AActor* Destruir;
+	int contador;
 };
 
 

@@ -9,7 +9,7 @@ void APlataformaMovible::BeginPlay()
 	posicionInicial = GetActorLocation();
 	posicionActual = posicionInicial;
 	posicionFinal = posicionActual + FVector(0.0f, -840.0f, 0.0f);
-	incrementoY = 2.0f;
+	incrementoY = 4.0f;
 	moverse = true;
 	t = 0.0f;
 }

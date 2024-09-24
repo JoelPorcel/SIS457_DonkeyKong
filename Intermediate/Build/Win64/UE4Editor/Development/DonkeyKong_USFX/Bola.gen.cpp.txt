@@ -1,5 +1,0 @@
-C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_USFX\Definitions.DonkeyKong_USFX.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Users\fredd\OneDrive\Documentos\joelP\Source\DonkeyKong_USFX/Bola.h
-C:\Users\fredd\OneDrive\Documentos\joelP\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_USFX\Bola.generated.h

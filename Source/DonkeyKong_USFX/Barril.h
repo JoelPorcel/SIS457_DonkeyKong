@@ -11,7 +11,7 @@ class DONKEYKONG_USFX_API ABarril : public AActor
 {
 	GENERATED_BODY()
 	
-public:	
+public:
 	// Sets default values for this actor's properties
 	ABarril();
 
@@ -19,7 +19,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -50,7 +50,6 @@ public:
 	float primero = 3.7;
 	float segundo = 10.5;
 	float incremento = 0;
-
 
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	//float MinYLimit;
